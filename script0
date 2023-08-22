@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for f in $(find . -iname "*.wav" -or -iname "*.txt" | sed -E 's/\.(wav|txt)$//' | sort | uniq -d); do
+    echo "$f.wav $(dirname $f".txt") $(soxi -D $f".wav") $(cat $f".txt")"
+done
